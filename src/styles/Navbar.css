@@ -1,12 +1,10 @@
-/* Navbar.css */
-
 /* Navbar always visible */
 .navbar {
-  position: fixed;       /* stays fixed at the top */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;           /* full width */
-  z-index: 1000;         /* keep above other content */
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +15,7 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Optional: add shadow when scrolling */
+/* Shadow when scrolling */
 .navbar.scrolled {
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(90, 62, 133, 0.1);
@@ -32,7 +30,6 @@
   font-family: 'Playfair Display', serif;
   transition: color 0.3s ease;
 }
-
 .navbar-logo .logo-link:hover {
   color: #7b3fe4;
 }
@@ -47,12 +44,11 @@
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .hamburger:hover {
   transform: rotate(90deg);
 }
 
-/* Links */
+/* Links (desktop) */
 .navbar-links {
   display: flex;
   gap: 2rem;
@@ -60,11 +56,9 @@
   margin: 0;
   padding: 0;
 }
-
 .navbar-links li {
   margin: 0;
 }
-
 .nav-link {
   text-decoration: none;
   color: #5a3e85;
@@ -73,16 +67,13 @@
   transition: color 0.3s ease, transform 0.2s ease;
   position: relative;
 }
-
 .nav-link:hover {
   color: #7b3fe4;
   transform: scale(1.05);
 }
-
 .nav-link.active {
   color: #7b3fe4;
 }
-
 .nav-link.active::after {
   content: "";
   position: absolute;
@@ -108,19 +99,40 @@
     width: 100%;
     background-color: #fdf9ff;
     padding: 1rem 2rem;
-    transform: translateY(-20px);
+    transform: translateY(-100%); /* hidden above */
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
   }
 
   .navbar-links.open {
-    transform: translateY(0);
+    transform: translateY(0); /* slide down */
     opacity: 1;
     pointer-events: auto;
   }
 
   .navbar-links li {
     margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.4s ease forwards;
+  }
+
+  /* Staggered fade-in */
+  .navbar-links.open li:nth-child(1) { animation-delay: 0.1s; }
+  .navbar-links.open li:nth-child(2) { animation-delay: 0.2s; }
+  .navbar-links.open li:nth-child(3) { animation-delay: 0.3s; }
+  .navbar-links.open li:nth-child(4) { animation-delay: 0.4s; }
+  .navbar-links.open li:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

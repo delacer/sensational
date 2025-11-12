@@ -45,23 +45,27 @@
   font-family: 'Raleway', sans-serif;
 }
 
+/* Filters */
 .events-filters {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .filter-button {
   background-color: #eae2ff;
   color: #5a3e85;
-  border: none;
-  padding: 0.5rem 1rem;
+  border: 1px solid #5a3e85;
+  padding: 0.4rem 0.8rem;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Raleway', sans-serif;
+  flex: 0 0 auto; /* prevent shrinking in scroll mode */
 }
 
 .filter-button.active,
@@ -236,17 +240,33 @@
     font-size: 1.2rem;
   }
 
-  .events-filters {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .events-search {
     width: 100%;
+  }
+
+  .events-filters {
+    overflow-x: auto;       /* horizontal scroll */
+    flex-wrap: nowrap;      /* single row */
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+
+  .filter-button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
   }
 
   .lightbox-content {
     width: 95%;
     padding: 0.5rem;
   }
+}
+
+/* Scrollbar styling for filters */
+.events-filters::-webkit-scrollbar {
+  height: 4px;
+}
+.events-filters::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
 }
