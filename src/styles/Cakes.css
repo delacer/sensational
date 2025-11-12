@@ -1,0 +1,336 @@
+/* Base Container */
+.cakes {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Raleway', sans-serif;
+  background-color: #fdf9ff;
+  color: #4a4a4a;
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* Header */
+.cakes-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cakes-header h1 {
+  font-size: 2.5rem;
+  color: #5a3e85;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.cakes-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+  color: #6a6a6a;
+}
+
+/* Carousel */
+.cake-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 220px;
+  scroll-snap-align: start;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(90, 62, 133, 0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(90, 62, 133, 0.12);
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.carousel-item h3 {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #5a3e85;
+}
+
+/* Grid Layout */
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Styling */
+.cake-card {
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(90, 62, 133, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(90, 62, 133, 0.12);
+}
+
+.cake-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.cake-content {
+  padding: 1.5rem;
+}
+
+.cake-content h2 {
+  font-size: 1.4rem;
+  color: #5a3e85;
+  margin-bottom: 0.75rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.toggle-button {
+  background-color: #7b3fe4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: #5a3e85;
+  transform: scale(1.03);
+}
+
+.cake-description {
+  display: none;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #4a4a4a;
+}
+
+.cake-description.visible {
+  display: block;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.cake-cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #7b3fe4;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cake-cta:hover {
+  text-decoration: underline;
+  color: #5a3e85;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.lightbox-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #7b3fe4;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-lightbox:hover {
+  background-color: #5a3e85;
+}
+
+/* Design Prompt Section */
+.cake-design-prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fdf9ff;
+  padding: 3rem 2rem;
+  margin: 4rem 0;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(90, 62, 133, 0.08);
+}
+
+.design-content {
+  flex: 1 1 500px;
+  padding-right: 2rem;
+}
+
+.design-content h2 {
+  font-size: 2rem;
+  color: #5a3e85;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.design-content p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #7b3fe4;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #5a3e85;
+  transform: scale(1.05);
+}
+
+.design-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.design-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Header */
+  .cakes-header h1 {
+    font-size: 2rem;
+  }
+
+  .cakes-header p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Carousel */
+  .cake-carousel {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .carousel-item {
+    width: 80%;              /* fill most of the screen */
+    margin: 0 auto;          /* center each card */
+  }
+
+  .cake-carousel::after {
+    content: "← Swipe →";    /* hint for users */
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7b3fe4;
+    margin-top: 0.5rem;
+  }
+
+  /* Grid Layout */
+  .cake-grid {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  /* Card Content */
+  .cake-content h2,
+  .design-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .toggle-button {
+    width: 100%; /* full width for easier tapping */
+  }
+
+  /* Lightbox */
+  .lightbox-content {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  /* Design Prompt Section */
+  .cake-design-prompt {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .design-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .design-image img {
+    max-width: 90%;
+  }
+}
