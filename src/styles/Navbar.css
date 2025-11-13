@@ -103,6 +103,7 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 0.4s ease, opacity 0.4s ease;
+    box-shadow: 0 4px 12px rgba(90, 62, 133, 0.15);
   }
 
   .navbar-links.open {
@@ -115,6 +116,10 @@
     margin-bottom: 1rem;
     opacity: 0;
     transform: translateY(20px);
+  }
+
+  /* Animate only when open */
+  .navbar-links.open li {
     animation: fadeInUp 0.4s ease forwards;
   }
 
