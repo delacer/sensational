@@ -9,6 +9,9 @@
   font-family: 'Playfair Display', serif;
   z-index: 1000;            /* ensure it stays above content */
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  height: 70px;             /* fixed height for consistency */
+  display: flex;
+  align-items: center;
 }
 
 /* Shadow when scrolled */
@@ -22,7 +25,8 @@
   display: flex;
   justify-content: space-between; /* logo left, links + toggle right */
   align-items: center;
-  padding: 0.8rem 1.5rem;
+  width: 100%;
+  padding: 0 1.5rem;
 }
 
 .nav-title {
@@ -77,7 +81,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 1rem;
+    padding: 0 1rem;
   }
 
   /* Company name color only for mobile */
@@ -100,11 +104,14 @@
     width: 100%;
     background: #001f3f;    /* solid navy dropdown background */
     gap: 1rem;
-    padding: 0.8rem 1.2rem;
+    padding: 1rem;
     transform: translateY(-20px);
     opacity: 0;
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    top: 70px;              /* dropdown starts below fixed navbar */
+    left: 0;
   }
 
   .navigation-list.open {
@@ -121,5 +128,5 @@
 
 /* Prevent content hiding behind fixed navbar */
 body {
-  padding-top: 70px; /* adjust based on navbar height */
+  padding-top: 70px; /* match navbar height */
 }

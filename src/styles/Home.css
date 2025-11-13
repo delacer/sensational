@@ -13,7 +13,7 @@
   padding: 6rem 2rem;
   color: white;
   text-align: center;
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,13 +36,14 @@
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
+  font-weight: 700;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 2rem;
   font-family: 'Raleway', sans-serif;
@@ -63,12 +64,13 @@
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover,
 .cta-button:focus {
   background-color: #5a3e85;
+  transform: scale(1.05);
   outline: none;
 }
 
@@ -102,7 +104,7 @@
 }
 
 .intro-text h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #5a3e85;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
@@ -129,6 +131,11 @@
   max-width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(90, 62, 133, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.intro-image img:hover {
+  transform: scale(1.03);
 }
 
 /* Services Section */
@@ -138,9 +145,8 @@
   text-align: center;
 }
 
-
 .services h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #5a3e85;
   margin-bottom: 2rem;
   font-family: 'Playfair Display', serif;
@@ -152,7 +158,6 @@
   gap: 2rem;
   justify-items: center;
 }
-
 
 .card {
   background: #fff;
@@ -171,7 +176,7 @@
 
 .card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #5a3e85;
   margin-bottom: 1rem;
 }
@@ -190,7 +195,7 @@
 }
 
 .testimonials h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #5a3e85;
   margin-bottom: 2rem;
   font-family: 'Playfair Display', serif;
@@ -256,7 +261,6 @@
 }
 
 /* Review Form */
-
 .review-form {
   margin-top: 3rem;
   background-color: #fff;
