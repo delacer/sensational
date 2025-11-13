@@ -320,6 +320,7 @@
 }
 
 /* Animations */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -327,6 +328,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* Hero adjustments */
   .hero h1 {
     font-size: 2.2rem;
   }
@@ -336,6 +338,7 @@
     gap: 1rem;
   }
 
+  /* Intro section stacked */
   .intro {
     flex-direction: column;
     text-align: center;
@@ -345,16 +348,38 @@
     max-width: 100%;
   }
 
+  /* Services stacked */
   .service-cards {
     flex-direction: column;
     align-items: center;
   }
 
+  /* Testimonials stacked */
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Review form compact */
   .review-form {
     padding: 1.5rem;
+  }
+
+  /* Navbar compact layout */
+  .navigation-header {
+    justify-content: flex-start; /* keep brand + hamburger together */
+    gap: 0.75rem;                /* small space between them */
+    padding: 0.4rem 1rem;
+  }
+
+  .nav-title {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-left: 0;              /* no auto margin pushing it away */
+    color: #ffffff;
   }
 }
