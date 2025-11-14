@@ -1,7 +1,11 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
-
+# Allow all crawlers full access
 User-agent: *
 Allow: /
+
+# Block unnecessary folders (optional, keeps crawlers focused on content)
+Disallow: /styles/
+Disallow: /scripts/
+Disallow: /assets/temp/
+
+# Sitemap location
 Sitemap: https://sensationalgoodie.netlify.app/sitemap.xml
