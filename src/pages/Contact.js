@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Helmet } from "react-helmet";
 import confetti from "canvas-confetti";
 import "../styles/Contact.css";
 import {
@@ -44,8 +45,57 @@ const Contact = () => {
 
   return (
     <main className="contact-container">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Contact Sensational Goodies | Luxury Bakery in Cape Town</title>
+        <meta
+          name="description"
+          content="Get in touch with Sensational Goodies, Cape Town’s luxury artisanal bakery. Call, email, or visit us for custom cakes, event styling, and branding services."
+        />
+        <meta
+          name="keywords"
+          content="Cape Town bakery contact, custom cakes, wedding cakes, event styling, Sensational Goodies"
+        />
+        <link rel="canonical" href="https://sensationalgoodie.netlify.app/pages/Contact" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Sensational Goodies | Luxury Bakery in Cape Town" />
+        <meta property="og:description" content="Reach Sensational Goodies bakery in Cape Town for cakes, events, and branding." />
+        <meta property="og:image" content="/assets/logo.png" />
+        <meta property="og:url" content="https://sensationalgoodie.netlify.app/pages/Contact" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Sensational Goodies | Luxury Bakery in Cape Town" />
+        <meta name="twitter:description" content="Call, email, or visit Sensational Goodies bakery in Cape Town." />
+        <meta name="twitter:image" content="/assets/logo.png" />
+
+        {/* Schema Markup */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Sensational Goodies",
+            "image": "https://sensationalgoodie.netlify.app/assets/logo.png",
+            "url": "https://sensationalgoodie.netlify.app/pages/Contact",
+            "telephone": "+27-61-329-2763",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "50 Wheeltree Way, Delft",
+              "addressLocality": "Cape Town",
+              "addressRegion": "Western Cape",
+              "postalCode": "7460",
+              "addressCountry": "ZA"
+            },
+            "description": "Luxury artisanal bakery offering custom cakes, event styling, and branding services in Cape Town."
+          }
+          `}
+        </script>
+      </Helmet>
       <header className="contact-header">
-        <h1 className="contact-title">Let’s Connect</h1>
+        <h1 className="contact-title">Contact Sensational Goodies</h1>
         <p className="contact-subtitle">
           Whether you're planning a celebration or have a sweet idea to share, we're here to listen.
         </p>

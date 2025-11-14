@@ -8,6 +8,7 @@ import {
   FaPhoneAlt,
   FaArrowUp
 } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 import '../styles/Footer.css';
 
 const getSeasonalTheme = () => {
@@ -65,9 +66,42 @@ const Footer = () => {
 
   return (
     <footer className={`footer ${theme}`}>
+      {/* SEO Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Sensational Goodies",
+            "brand": {
+              "@type": "Brand",
+              "name": "Sensational Goodies"
+            },
+            "image": "https://sensationalgoodie.netlify.app/assets/logo.png",
+            "url": "https://sensationalgoodie.netlify.app/",
+            "telephone": "+27-61-329-2763",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "50 Wheeltree Way, Delft",
+              "addressLocality": "Cape Town",
+              "addressRegion": "Western Cape",
+              "postalCode": "7460",
+              "addressCountry": "ZA"
+            },
+            "sameAs": [
+              "https://www.facebook.com/peey.matsika",
+              "https://wa.me/27613292763",
+              "mailto:stevepeey@gmail.com"
+            ]
+          }
+          `}
+        </script>
+      </Helmet>
+
       <div className="footer-top">
         <div className="footer-section footer-brand">
-          <h2>Sensational Goodies</h2>
+          <h2>Sensational Goodies Bakery Cape Town</h2>
           <p>
             Luxury baked goods and elegant event styling — crafted with love, legacy, and artistry.
           </p>
@@ -77,25 +111,25 @@ const Footer = () => {
           <h4>Contact Us</h4>
           <ul>
             <li><FaMapMarkerAlt /> 50 Wheeltree Way, Delft</li>
-            <li><FaEnvelope /> <a href="mailto:stevepeey@gmail.com">stevepeey@gmail.com</a></li>
-            <li><FaPhoneAlt /> <a href="tel:+27613292763">+27 61 329 2763</a></li>
+            <li><FaEnvelope /> <a href="mailto:stevepeey@gmail.com" aria-label="Email Sensational Goodies">stevepeey@gmail.com</a></li>
+            <li><FaPhoneAlt /> <a href="tel:+27613292763" aria-label="Call Sensational Goodies">+27 61 329 2763</a></li>
           </ul>
         </div>
 
         <div className="footer-section footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/pages/Cakes">Cakes</Link></li>
-            <li><Link to="/pages/Events">Events</Link></li>
-            <li><Link to="/pages/About">About</Link></li>
-            <li><Link to="/pages/Contact">Contact</Link></li>
+            <li><Link to="/" aria-label="Go to Home">Home</Link></li>
+            <li><Link to="/pages/Cakes" aria-label="Explore Cakes">Cakes</Link></li>
+            <li><Link to="/pages/Events" aria-label="Explore Events">Events</Link></li>
+            <li><Link to="/pages/About" aria-label="Learn About Us">About</Link></li>
+            <li><Link to="/pages/Contact" aria-label="Contact Sensational Goodies">Contact</Link></li>
           </ul>
         </div>
 
         <div className="footer-section footer-newsletter">
           <h4>Stay in the Loop</h4>
-          <p>Subscribe for sweet updates and exclusive offers.</p>
+          <p>Subscribe for sweet updates and exclusive offers from Sensational Goodies.</p>
           <form onSubmit={handleNewsletterSubmit}>
             <div className="newsletter-input">
               <input
@@ -133,7 +167,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Sensational Goodies. Crafted with love in South Africa.</p>
+        <p>&copy; {new Date().getFullYear()} Sensational Goodies Bakery Cape Town. Crafted with love in South Africa.</p>
         <button className="scroll-top" onClick={scrollToTop} aria-label="Scroll to top">
           <FaArrowUp />
         </button>

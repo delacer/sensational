@@ -8,6 +8,7 @@ import {
   FaPhone,
   FaBars,
 } from "react-icons/fa";
+import { Helmet } from "react-helmet"; // for SEO meta tags
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -16,60 +17,65 @@ const Navbar = () => {
   const getLinkClass = ({ isActive }) =>
     isActive ? "nav-link active" : "nav-link";
 
-  // Close menu when a link is clicked
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
 
   return (
     <>
-      {/* Fixed Navbar */}
-      <nav className="navigation-container">
-        <div className="navigation-header">
-          {/* Company name */}
-          <h1 className="nav-title">Sensational Goodies</h1>
+      {/* SEO Schema for Navigation */}
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "SiteNavigationElement",
+            "name": ["Home", "Cakes", "Events", "About", "Contact"],
+            "url": [
+              "https://sensationalgoodie.netlify.app/",
+              "https://sensationalgoodie.netlify.app/cakes",
+              "https://sensationalgoodie.netlify.app/events",
+              "https://sensationalgoodie.netlify.app/about",
+              "https://sensationalgoodie.netlify.app/contact"
+            ]
+          }
+          `}
+        </script>
+      </Helmet>
 
-          {/* Nav list (inline on desktop, dropdown on mobile) */}
+      {/* Fixed Navbar */}
+      <nav className="navigation-container" aria-label="Main Navigation">
+        <div className="navigation-header">
+          {/* Company name with keyword-rich branding */}
+          <NavLink to="/" className="nav-title" onClick={handleLinkClick}>
+            Sensational Goodies
+          </NavLink>
+
+          {/* Nav list */}
           <ul className={`navigation-list ${menuOpen ? "open" : ""}`}>
             <li>
-              <NavLink to="/" className={getLinkClass} onClick={handleLinkClick}>
-                <FaHome /> Home
+              <NavLink to="/" className={getLinkClass} onClick={handleLinkClick} aria-current="page">
+                <FaHome aria-hidden="true" /> Home
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/pages/Cakes"
-                className={getLinkClass}
-                onClick={handleLinkClick}
-              >
-                <FaBirthdayCake /> Cakes
+              <NavLink to="/pages/Cakes" className={getLinkClass} onClick={handleLinkClick}>
+                <FaBirthdayCake aria-hidden="true" /> Cakes
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/pages/Events"
-                className={getLinkClass}
-                onClick={handleLinkClick}
-              >
-                <FaCalendarAlt /> Events
+              <NavLink to="/pages/Events" className={getLinkClass} onClick={handleLinkClick}>
+                <FaCalendarAlt aria-hidden="true" /> Events
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/pages/About"
-                className={getLinkClass}
-                onClick={handleLinkClick}
-              >
-                <FaInfoCircle /> About
+              <NavLink to="/pages/About" className={getLinkClass} onClick={handleLinkClick}>
+                <FaInfoCircle aria-hidden="true" /> About
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/pages/Contact"
-                className={getLinkClass}
-                onClick={handleLinkClick}
-              >
-                <FaPhone /> Contact
+              <NavLink to="/pages/Contact" className={getLinkClass} onClick={handleLinkClick}>
+                <FaPhone aria-hidden="true" /> Contact
               </NavLink>
             </li>
           </ul>
@@ -81,12 +87,12 @@ const Navbar = () => {
             aria-label="Toggle navigation"
             aria-expanded={menuOpen}
           >
-            <FaBars />
+            <FaBars aria-hidden="true" />
           </button>
         </div>
       </nav>
 
-      {/* Spacer div to prevent content being hidden behind fixed navbar */}
+      {/* Spacer div */}
       <div style={{ height: "70px" }}></div>
     </>
   );

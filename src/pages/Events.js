@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet"; // SEO meta tags
 import "../styles/Events.css";
 
 const eventsData = [
@@ -127,6 +128,59 @@ const Events = () => {
 
   return (
     <main className="events-container">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Event Decor Services | Sensational Goodies Cape Town</title>
+        <meta
+          name="description"
+          content="Discover luxury event decor services in Cape Town. From weddings and baby showers to birthdays and picnics, Sensational Goodies transforms celebrations into unforgettable experiences."
+        />
+        <meta
+          name="keywords"
+          content="Cape Town event decor, wedding decor, baby shower decor, birthday party styling, Sensational Goodies"
+        />
+        <link rel="canonical" href="https://sensationalgoodie.netlify.app/pages/Events" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Event Decor Services | Sensational Goodies Cape Town" />
+        <meta property="og:description" content="Luxury event decor services for weddings, birthdays, baby showers, and more in Cape Town." />
+        <meta property="og:image" content="/assets/wedding-decor.png" />
+        <meta property="og:url" content="https://sensationalgoodie.netlify.app/pages/Events" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Event Decor Services | Sensational Goodies Cape Town" />
+        <meta name="twitter:description" content="Luxury event decor services for weddings, birthdays, baby showers, and more in Cape Town." />
+        <meta name="twitter:image" content="/assets/wedding-decor.png" />
+
+        {/* Schema Markup */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Event Decor Services",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Sensational Goodies",
+              "image": "https://sensationalgoodie.netlify.app/assets/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "50 Wheeltree Way, Delft",
+                "addressLocality": "Cape Town",
+                "addressRegion": "Western Cape",
+                "postalCode": "7460",
+                "addressCountry": "ZA"
+              },
+              "telephone": "+27-61-329-2763",
+              "url": "https://sensationalgoodie.netlify.app/pages/Events"
+            },
+            "description": "Luxury event decor services for weddings, birthdays, baby showers, picnics, and more in Cape Town."
+          }
+          `}
+        </script>
+      </Helmet>
       <header className="events-header">
         <h1>✨ Events Decor Services</h1>
         <p>From intimate gatherings to grand celebrations, our decor transforms spaces into unforgettable experiences.</p>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet"; // SEO meta tags
 import "../styles/Cakes.css";
 
 const cakeData = [
@@ -96,6 +97,67 @@ const Cakes = () => {
 
   return (
     <main className="cakes">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Sensational Goodies | Custom Cakes in Cape Town – Wedding, Birthday & Celebration Cakes</title>
+        <meta
+          name="description"
+          content="Order luxury cakes in Cape Town from Sensational Goodies. Wedding cakes, birthday cakes, baby shower cakes, and custom designs crafted with elegance and flavor."
+        />
+        <meta
+          name="keywords"
+          content="Sensational Goodies, Cape Town bakery, Delft bakery,sensational, goodies, custom cakes, wedding cakes, birthday cakes, baby shower cakes"
+        />
+        <link rel="canonical" href="https://sensationalgoodie.netlify.app/pages/Cakes" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Sensational Goodies | Custom Cakes in Cape Town" />
+        <meta property="og:description" content="Luxury cakes handcrafted for weddings, birthdays, baby showers, and more in Cape Town." />
+        <meta property="og:image" content="/assets/wedding.png" />
+        <meta property="og:url" content="https://sensationalgoodie.netlify.app/pages/Cakes" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sensational Goodies | Custom Cakes in Cape Town" />
+        <meta name="twitter:description" content="Luxury cakes handcrafted for weddings, birthdays, baby showers, and more in Cape Town." />
+        <meta name="twitter:image" content="/assets/wedding.png" />
+
+        {/* Schema Markup */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Bakery",
+            "name": "Sensational Goodies",
+            "url": "https://sensationalgoodie.netlify.app/pages/Cakes",
+            "image": "https://sensationalgoodie.netlify.app/assets/wedding.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "50 Wheeltree Way, Delft",
+              "addressLocality": "Cape Town",
+              "addressRegion": "Western Cape",
+              "postalCode": "7460",
+              "addressCountry": "ZA"
+            },
+            "telephone": "+27-61-329-2763",
+            "description": "Luxury cakes handcrafted for weddings, birthdays, baby showers, and more in Cape Town.",
+            "makesOffer": [
+              ${cakeData.map(cake => `{
+                "@type": "Product",
+                "name": "${cake.title}",
+                "image": "https://sensationalgoodie.netlify.app${cake.image}",
+                "description": "${cake.description}",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Sensational Goodies"
+                }
+              }`).join(",")}
+            ]
+          }
+          `}
+        </script>
+      </Helmet>
       <header className="cakes-header">
         <h1>🍰 Signature Cakes for Every Occasion</h1>
         <p>
